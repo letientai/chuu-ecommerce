@@ -3,6 +3,7 @@ import "../layout.scss";
 import bkHeader from "../../../assets/img-navbar/header.gif";
 import { Option } from "./option";
 import Slider from "react-slick";
+import { Search } from "./search";
 export const Header1 = () => {
   return (
     <div
@@ -36,17 +37,6 @@ export const Header2 = () => {
 };
 
 export const Header3 = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 8,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    arrows: true,
-    autoplay: true,
-    
-  };
   const category = [
     "HÀNG MỚI",
     "XU HƯỚNG",
@@ -60,13 +50,15 @@ export const Header3 = () => {
   return (
     <div className="c-nav2 row">
       <div className="header-v2__two col-9 d-flex">
-         {category.map((item,index) => (
-           <div key={index} className="mx-3 py-3 header-v2__nav2-item">
-             <span>{item}</span>
-           </div>
-         ))}
+        {category.map((item, index) => (
+          <div key={index} className="mx-3 py-3 header-v2__nav2-item">
+            <span>{item}</span>
+          </div>
+        ))}
       </div>
-      <div className="header-search j-header-search col-3" ></div>
+      <div className="header-search col-3">
+        <Search />
+      </div>
     </div>
   );
 };
