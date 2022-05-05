@@ -8,7 +8,7 @@ export const Option = () => {
   return (
     <div className="options d-flex px-3">
       {option.map((item, index) => (
-        <div className="header-right-dropdown-ctn my-3 mx-2">
+        <div key={index} className="header-right-dropdown-ctn my-3 mx-2">
           <img src={item} alt="" />
         </div>
       ))}
