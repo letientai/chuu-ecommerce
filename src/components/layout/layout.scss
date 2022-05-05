@@ -23,12 +23,9 @@
 }
 .header-nav{
     transform: translateY(0px);
-    position: fixed;
-    left: 0;
     width: 100vw;
     transition: transform .3s,-webkit-transform .3s;
-    z-index: 500;
-    background-color: #f7f8fa;
+    background-color: #f8f8f8;
     .header-left{
         font-size: 17px;
         font-weight: 500;
@@ -51,4 +48,32 @@
             letter-spacing: 6px;
         }
     }
+    .header-right{
+      .options{
+        justify-content: flex-end;
+        .header-right-dropdown-ctn{
+          cursor: pointer;
+        }
+      }
+    }
+}
+
+
+.c-nav2 {
+  position: relative;
+  display: table;
+  padding: 0 20px;
+  width: 100%;
+  background-color: #fff;
+  .header-v2__nav2-item{
+    cursor: pointer;
+    &:hover{
+      border-bottom: 2px solid black;
+    }
+    span{
+      font-size: 14px;
+      font-weight: 500;
+      color: #494949;
+    }
+  }
 }
