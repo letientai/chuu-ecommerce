@@ -1,0 +1,54 @@
+.c-header {
+  position: relative;
+  min-height: 0px;
+  visibility: visible;
+}
+.config-top-banners {
+  cursor: pointer;
+  background: #f5f5f5;
+  min-height: 48px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+.c-header2 {
+  font-family: Muli, Arial, Helvetica, sans-serif !important;
+  background-color: #fff;
+}
+@media (max-width: 1279px) {
+  .c-header2 .header-height,
+  .c-header2 .header-nav {
+    height: 118px;
+  }
+}
+.header-nav{
+    transform: translateY(0px);
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    transition: transform .3s,-webkit-transform .3s;
+    z-index: 500;
+    background-color: #f7f8fa;
+    .header-left{
+        font-size: 17px;
+        font-weight: 500;
+        color: #727272;
+        .option{
+            cursor: pointer;
+            &:hover{
+                color: #2c2c2c;
+            }
+        }
+        
+    }
+    .header-logo{
+        text-align: center;
+        .icon-sheinlogo{
+            align-items: center;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            letter-spacing: 6px;
+        }
+    }
+}
