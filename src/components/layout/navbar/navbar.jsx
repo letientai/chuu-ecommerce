@@ -10,7 +10,7 @@ export const Navbar = () => {
       if (y > window.scrollY) {
         elementNav.current.style.top = "0px";
       } else if (y < window.scrollY && window.scrollY > 100) {
-        elementNav.current.style.top = "-120px";
+        elementNav.current.style.top = "-112px";
       }
       setY(window.scrollY);
     },
