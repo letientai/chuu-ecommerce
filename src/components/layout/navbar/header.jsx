@@ -17,7 +17,7 @@ export const Header2 = () => {
   const category = ["NỮ", "PLUS SIZE", "TRẺ EM", "NAM", "ĐỜI SỐNG"];
   return (
     <div className="header-height j-header-height">
-      <div className="header-nav j-header-fixer d-flex">
+      <div className="header-nav j-header-fixer row justify-content-between">
         <div className="col-5 header-left j-cm-header-left-outer d-flex px-3">
           {category.map((item, index) => (
             <div key={index} className="option my-3 mx-2">
@@ -25,7 +25,7 @@ export const Header2 = () => {
             </div>
           ))}
         </div>
-        <div className="col-2 she-text-center header-logo">
+        <div className="col-2 she-text-center header-logo" >
           <h1 className="iconfont-critical icon-sheinlogo my-2">SHEIN</h1>
         </div>
         <div className="col-5 header-right she-text-right">
