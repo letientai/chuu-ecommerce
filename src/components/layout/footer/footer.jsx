@@ -44,7 +44,6 @@ export const Footer = () => {
       content: ["Liên Hệ Chúng Tôi", "Phương Thức Thanh Toán", "Điểm Thưởng"],
     },
   ];
-
   const iconContact = [fb, ig, bell, p, tiktok, tw, youtube];
   const payment = [
     payment1,
@@ -55,6 +54,7 @@ export const Footer = () => {
     payment6,
     payment7,
   ];
+
   return (
     <div className="c-footer container-fluid-1200 ">
       <div className="container-fluid-1200 j-footer ">
