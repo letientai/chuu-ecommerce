@@ -1,7 +1,15 @@
-import React from 'react'
-import './NavigateProducts.scss';
+import React from "react";
+import "./NavigateProducts.scss";
 const NavigateProducts = () => {
-    const category = ['mới', 'Đánh giá cao nhất', 'Đầm','Áo sơ mi','Áo thun','Quần','Váy']
+  const category = [
+    "mới",
+    "Đánh giá cao nhất",
+    "Đầm",
+    "Áo sơ mi",
+    "Áo thun",
+    "Quần",
+    "Váy",
+  ];
   return (
     <div className="navitage" >
         <div className="bread-crumb" >
@@ -25,8 +33,8 @@ const NavigateProducts = () => {
                 </div>
             </div>
         </div>
-    </div>
-  )
-}
+      </div>
+  );
+};
 
-export default NavigateProducts
+export default NavigateProducts;

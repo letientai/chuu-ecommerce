@@ -1,7 +1,9 @@
 .c-header {
-  position: relative;
+  position: fixed;
+  top: 0;
   min-height: 0px;
   visibility: visible;
+  transition: ease-in-out 0.4s;
 }
 .config-top-banners {
   cursor: pointer;
@@ -21,59 +23,87 @@
     height: 118px;
   }
 }
-.header-nav{
-    transform: translateY(0px);
-    width: 100vw;
-    transition: transform .3s,-webkit-transform .3s;
-    background-color: #f8f8f8;
-    .header-left{
-        font-size: 17px;
-        font-weight: 500;
-        color: #727272;
-        .option{
-            cursor: pointer;
-            &:hover{
-                color: #2c2c2c;
-            }
-        }
-        
-    }
-    .header-logo{
-        text-align: center;
-        .icon-sheinlogo{
-            align-items: center;
-            font-size: 40px;
-            font-weight: bolder;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            letter-spacing: 6px;
-        }
-    }
-    .header-right{
-      .options{
-        justify-content: flex-end;
-        .header-right-dropdown-ctn{
-          cursor: pointer;
-        }
+.header-nav {
+  transform: translateY(0px);
+  width: 100vw;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  background-color: #f8f8f8;
+  .header-left {
+    font-size: 17px;
+    font-weight: 500;
+    color: #727272;
+    .option {
+      cursor: pointer;
+      &:hover {
+        color: #2c2c2c;
       }
     }
+  }
+  .header-logo {
+    text-align: center;
+    .icon-sheinlogo {
+      align-items: center;
+      font-size: 40px;
+      font-weight: bolder;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      letter-spacing: 6px;
+    }
+  }
+  .header-right {
+    .options {
+      justify-content: flex-end;
+      .header-right-dropdown-ctn {
+        cursor: pointer;
+      }
+    }
+  }
 }
-
-
+.row {
+  margin: 0 !important;
+}
 .c-nav2 {
   position: relative;
   display: table;
   padding: 0 20px;
   width: 100%;
   background-color: #fff;
-  .header-v2__nav2-item{
+  box-shadow: 1px 0px 7px 0px #e6e5e5;
+  .header-v2__nav2-item {
     cursor: pointer;
-    &:hover{
-      border-bottom: 2px solid black;
+    position: relative;
+    &::after {
+      position: absolute;
+      display: none;
+      background-color: #e95f5d;
+      bottom: 0;
+      content: "";
+      width: 100%;
+      height: 2px;
     }
-    span{
+    &:hover::after {
+      display: block;
+    }
+    span {
       font-size: 14px;
       font-weight: 500;
       color: #494949;
+    }
+  }
+}
+
+.header-search {
+  .j-header-search {
+    border: 0.5px solid #9b9b9b;
+    &-input {
+      margin: 5px;
+      outline: none;
+      border: none;
+    }
+    .search-btn {
+      background-color: #494949;
+      width: 40px;
+      text-align: center;
     }
   }
 }
