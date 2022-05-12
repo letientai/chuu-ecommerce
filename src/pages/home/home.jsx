@@ -9,6 +9,10 @@ export const Home = () => {
     <div className='container-fluid' >
         <NavigateProducts/>
         <AllProducts/>
+
+
+
+        
     </div>
   )
 }
