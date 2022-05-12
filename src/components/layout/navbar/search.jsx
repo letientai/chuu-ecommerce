@@ -8,7 +8,7 @@ export const Search = () => {
         placeholder="Tìm kiếm..."
         className="header-search-input j-header-search-input"
       />
-      <div className="search-btn bk-dark">
+      <div className="search-btn ">
           <img src={search} alt="" className="my-1"/>
       </div>
     </form>
