@@ -3,7 +3,7 @@ import './NavigateProducts.scss';
 const NavigateProducts = () => {
     const category = ['mới', 'Đánh giá cao nhất', 'Đầm','Áo sơ mi','Áo thun','Quần','Váy']
   return (
-    <div className="container" >
+    <div className="navitage" >
         <div className="bread-crumb" >
             <span>Trang chủ</span>/
             <span>Quần áo nữ</span>

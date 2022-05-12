@@ -1,12 +1,12 @@
 import React from 'react'
-import { Navbar } from '../../components/layout/navbar/navbar'
+import AllProducts from '../../components/AllProducts/AllProducts'
 import NavigateProducts from '../../components/NavigateProducts/NavigateProducts'
 
 export const Home = () => {
   return (
-    <div>
-        <Navbar/>
+    <div className='container-fluid' >
         <NavigateProducts/>
+        <AllProducts/>
     </div>
   )
 }
