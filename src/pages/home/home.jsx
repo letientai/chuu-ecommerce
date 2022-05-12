@@ -6,9 +6,7 @@ import NavigateProducts from '../../components/NavigateProducts/NavigateProducts
 export const Home = () => {
   return (
     <div>
-        <Navbar/>
         <NavigateProducts/>
-        <Footer/>
     </div>
   )
 }
