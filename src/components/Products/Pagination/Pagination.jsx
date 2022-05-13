@@ -4,11 +4,19 @@ const Pagination = ({
     cardPerPage,
     totalProducts, 
     currentPage ,
-    setCurrentPage
+    setCurrentPage,
+    setLoading
 }) => {
     const pageNumbers = [];
     for (let i = 1; i < Math.ceil(totalProducts / cardPerPage); i++) {
         pageNumbers.push(i);
+    }
+    const handlePagination = async (page)=> {
+        window.scrollTo(0, 0);
+        await setCurrentPage(page);
+        setTimeout(()=> {
+            setLoading(false);
+        },[1000])
     }
     return (
         <nav>
@@ -16,8 +24,9 @@ const Pagination = ({
                 {pageNumbers.map((page, i) => {
                     return (
                         <li
-                            onClick={(e) =>{
-                                setCurrentPage(page);
+                            onClick={ (e) =>{
+                                setLoading(true);
+                                handlePagination(page);
                             }}
                             className={
                                 i + 1 === currentPage ? 
