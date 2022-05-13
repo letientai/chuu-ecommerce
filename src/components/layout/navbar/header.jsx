@@ -2,7 +2,6 @@ import React from "react";
 import "../layout.scss";
 import bkHeader from "../../../assets/img-navbar/header.gif";
 import { Option } from "./option";
-import Slider from "react-slick";
 import { Search } from "./search";
 export const Header1 = () => {
   return (
