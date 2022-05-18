@@ -1,0 +1,18 @@
+.category {
+    border-top: .5px solid #ccc;
+    .category__list {
+        padding: 0;
+        .category__list--item {
+            display : flex;
+            align-items : center;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding: 5px 10px 5px 0px;
+            font-weight: 500;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(0 , 0, 0, 0.05);
+            }
+        }
+    }
+}

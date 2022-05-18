@@ -1,4 +1,4 @@
-.container {
+.navitage {
   margin-top: var(--nav-height);
   .bread-crumb {
     padding: 20px;
@@ -37,9 +37,5 @@
         }
       }
     }
-  }
-  @media (min-width: 1400px) {
-    max-width: 100% !important;
-    padding: 0 50px !important;
-  }
+}
 }

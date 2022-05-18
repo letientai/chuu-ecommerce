@@ -1,0 +1,13 @@
+.list__pages{
+    justify-content: center;
+    .list__pages__item{
+        padding: 5px 10px; 
+        margin: 10px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+    .active{
+        background-color: #e95f5d;
+        color: white;
+    }
+}

@@ -1,5 +1,5 @@
 .j-goods-detail-v2 {
-  padding-top: 180px;
+  padding-top: 200px;
 }
 .goods-detailv2 {
   padding-bottom: 85px;
@@ -31,6 +31,10 @@
             width: 100%;
             img {
               width: 100%;
+              height: 600px;
+              @media screen and (max-width: 1640px) {
+                height: 635px;
+              }
             }
           }
         }
@@ -40,6 +44,7 @@
           .product-intro__info-sticky {
             margin-right: 0 !important;
             .product-intro__head {
+              border-bottom: 1px dashed #e5e5e5;
               &-name {
                 font-size: 14px;
                 text-transform: none;
@@ -62,6 +67,110 @@
                 vertical-align: middle;
                 font-weight: 700;
                 font-family: Arial Black;
+              }
+            }
+            .product-intro__select-box {
+              padding-top: 10px;
+              .product-intro__size {
+                margin-top: 15px;
+                &-title {
+                  margin-bottom: 15px;
+                  font-size: 16px;
+                  font-weight: 700;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                &-choose {
+                  .product-intro__size-radio {
+                    border-radius: 10px;
+                    border: 1px solid #e5e5e5;
+                    cursor: pointer;
+                  }
+                  .product-intro__size-radio:nth-child(1) {
+                    margin-left: 0 !important;
+                  }
+                  .product-intro__size-check:nth-child(1) {
+                    margin-left: 0 !important;
+                  }
+                  .product-intro__size-check {
+                    border-radius: 10px;
+                    border: 1px solid #333333;
+                    cursor: pointer;
+                  }
+                }
+                &-tips {
+                  padding: 3px 0 10px;
+                  font-size: 12px;
+                }
+              }
+            }
+            .product-intro__add {
+              margin-top: 15px;
+              &-btn {
+                width: calc(100% - 0px);
+                font-family: Arial Black;
+                button {
+                  width: 100%;
+                }
+                .she-btn-xl {
+                  min-width: 144px;
+                  height: 54px;
+                  line-height: 52px;
+                  padding: 0 30px;
+                  font-size: 18px;
+                  font-weight: 700;
+                  margin-bottom: 0;
+                  font-weight: 400;
+                  text-align: center;
+                  cursor: pointer;
+                  background: #222;
+                  border: 1px solid transparent;
+                  color: #fff;
+                  white-space: nowrap;
+                  text-transform: uppercase;
+                  outline: 0;
+                }
+              }
+              .product-intro__add-tips {
+                margin-top: 10px;
+                font-size: 12px;
+                color: #767676;
+                span {
+                  color: #c44a01;
+                }
+              }
+            }
+            .product-intro__freeshipping {
+              margin-top: 25px;
+              background-color: #f7f8fa;
+              &-item {
+                width: 100%;
+                padding: 10px 20px;
+                cursor: pointer;
+                display: table;
+                .shipping {
+                  vertical-align: top;
+                  width: 32px;
+                  img {
+                    width: 90%;
+                  }
+                }
+                .freeshipping-title {
+                  margin-bottom: 5px;
+                  color: #000;
+                  font-size: 12px;
+                  font-weight: 700;
+                }
+                .freeshipping-desc{
+                  color: #767676;
+                  font-size: 12px;
+                  line-height: 1.1;
+                  P{
+                    margin-top: 5px;
+                    display: block;
+                  }
+                }
               }
             }
           }
