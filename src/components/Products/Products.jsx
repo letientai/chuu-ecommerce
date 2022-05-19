@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Spinner } from 'react-bootstrap'
 import datas from '../../assets/Data/data'
 import Pagination from './Pagination/Pagination'
 import Product from './Product'
@@ -14,7 +15,7 @@ const Products = () => {
       {
         loading?
         <div className='row loading' >
-          <h3>Loading</h3>
+           <Spinner animation="border" variant="danger" />
         </div>
         :
         <div className='row' >
