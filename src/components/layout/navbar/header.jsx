@@ -3,6 +3,7 @@ import "../layout.scss";
 import bkHeader from "../../../assets/img-navbar/header.gif";
 import { Option } from "./option";
 import { Search } from "./search";
+import { useNavigate } from "react-router-dom";
 export const Header1 = () => {
   return (
     <div
@@ -14,6 +15,11 @@ export const Header1 = () => {
 
 export const Header2 = () => {
   const category = ["NỮ", "PLUS SIZE", "TRẺ EM", "NAM", "ĐỜI SỐNG"];
+  const navigate = useNavigate();
+
+  const moveToHome = () => {
+    navigate("/");
+  };
   return (
     <div className="header-height j-header-height">
       <div className="header-nav j-header-fixer row justify-content-between">
@@ -24,8 +30,13 @@ export const Header2 = () => {
             </div>
           ))}
         </div>
-        <div className="col-2 she-text-center header-logo" >
-          <h1 className="iconfont-critical icon-sheinlogo my-2">SHEIN</h1>
+        <div
+          className="col-2 she-text-center header-logo "
+          onClick={moveToHome}
+        >
+          <a href="/">
+            <h1 className="iconfont-critical icon-sheinlogo my-2">SHEIN</h1>
+          </a>
         </div>
         <div className="col-5 header-right she-text-right">
           <Option />
@@ -35,7 +46,7 @@ export const Header2 = () => {
   );
 };
 
-export const Header3 = () => {
+export const Header3 = (prop) => {
   const category = [
     "HÀNG MỚI",
     "XU HƯỚNG",
@@ -46,8 +57,11 @@ export const Header3 = () => {
     "ĐỒ ĐI BIỂN",
     "GIÀY DÉP & PHỤ KIỆN",
   ];
+  const sentData = (data) => {
+    prop.sentSearch(data);
+  };
   return (
-    <div className="c-nav2 row">
+    <div className="c-nav2 row d-flex">
       <div className="header-v2__two col-9 d-flex">
         {category.map((item, index) => (
           <div key={index} className="mx-3 py-3 header-v2__nav2-item">
@@ -56,7 +70,7 @@ export const Header3 = () => {
         ))}
       </div>
       <div className="header-search col-3">
-        <Search />
+        <Search sentData={sentData} />
       </div>
     </div>
   );

@@ -12,11 +12,11 @@ const Pagination = ({
         pageNumbers.push(i);
     }
     const handlePagination = async (page)=> {
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 200);
         await setCurrentPage(page);
         setTimeout(()=> {
             setLoading(false);
-        },[1000])
+        },[1200])
     }
     return (
         <nav>

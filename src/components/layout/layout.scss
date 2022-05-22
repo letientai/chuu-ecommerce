@@ -43,6 +43,11 @@
   }
   .header-logo {
     text-align: center;
+    cursor: pointer;
+    a{
+      text-decoration: none;
+      color: #222;
+    }
     .icon-sheinlogo {
       align-items: center;
       font-size: 40px;
@@ -244,6 +249,7 @@
       background-color: #494949;
       width: 40px;
       text-align: center;
+      cursor: pointer;
     }
   }
 }

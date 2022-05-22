@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Category from '../Category/Category'
 import Products from '../Products/Products'
 import './AllProducts.scss';
-const AllProducts = () => {
+const AllProducts = ({search}) => {
   return (
       <div className='all__product' >
         <div className='row'>
           <Category/>
-          <Products />
+          <Products search={search}/>
         </div>
       </div>
     
