@@ -1,0 +1,1 @@
+export const SET_ADD_CART = 'set_add_cart';

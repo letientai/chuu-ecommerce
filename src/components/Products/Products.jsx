@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import datas from '../../assets/Data/data'
+import datas from '../../assets/Data/datas'
 import Pagination from './Pagination/Pagination'
 import Product from './Product'
 const Products = () => {
   const [loading , setLoading] = useState(false);
   const [currentPage , setCurrentPage] = useState(1);
-  const [cardPerPage , setCardPerPage] = useState(12);
+  const [cardPerPage] = useState(12);
   const indexLastPage = currentPage *  cardPerPage;
   const indexFirstPage = indexLastPage - cardPerPage;
   const currentCardInPage = datas.slice(indexFirstPage , indexLastPage);
