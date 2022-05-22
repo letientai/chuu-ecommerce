@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import "../layout.scss";
 import { Header1, Header2, Header3 } from "./header";
-export const Navbar = () => {
+export const Navbar = (prop) => {
   const elementNav = useRef();
   const [y, setY] = useState(window.scrollY);
   const handleNavigation = useCallback(
@@ -25,11 +25,14 @@ export const Navbar = () => {
     };
   }, [handleNavigation]);
 
+  const sentSearch = (data) => {
+    prop.sentDataSearch(data)
+  }
   return (
     <div className="c-header j-c-header1" ref={elementNav}>
       <Header1 />
       <Header2 />
-      <Header3 />
+      <Header3 sentSearch={sentSearch}/>
     </div>
   );
 };

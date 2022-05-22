@@ -30,8 +30,13 @@ export const Header2 = () => {
             </div>
           ))}
         </div>
-        <div className="col-2 she-text-center header-logo " onClick={moveToHome}>
-          <h1 className="iconfont-critical icon-sheinlogo my-2">SHEIN</h1>
+        <div
+          className="col-2 she-text-center header-logo "
+          onClick={moveToHome}
+        >
+          <a href="/">
+            <h1 className="iconfont-critical icon-sheinlogo my-2">SHEIN</h1>
+          </a>
         </div>
         <div className="col-5 header-right she-text-right">
           <Option />
@@ -41,7 +46,7 @@ export const Header2 = () => {
   );
 };
 
-export const Header3 = () => {
+export const Header3 = (prop) => {
   const category = [
     "HÀNG MỚI",
     "XU HƯỚNG",
@@ -52,6 +57,9 @@ export const Header3 = () => {
     "ĐỒ ĐI BIỂN",
     "GIÀY DÉP & PHỤ KIỆN",
   ];
+  const sentData = (data) => {
+    prop.sentSearch(data);
+  };
   return (
     <div className="c-nav2 row d-flex">
       <div className="header-v2__two col-9 d-flex">
@@ -62,7 +70,7 @@ export const Header3 = () => {
         ))}
       </div>
       <div className="header-search col-3">
-        <Search />
+        <Search sentData={sentData} />
       </div>
     </div>
   );
