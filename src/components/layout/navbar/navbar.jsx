@@ -26,13 +26,15 @@ export const Navbar = (prop) => {
   }, [handleNavigation]);
 
   const sentSearch = (data) => {
-    prop.sentDataSearch(data)
-  }
+    prop.sentDataSearch(data);
+  };
   return (
     <div className="c-header j-c-header1" ref={elementNav}>
-      <Header1 />
-      <Header2 />
-      <Header3 sentSearch={sentSearch}/>
+      <div className="headerNavbar">
+        <Header1 />
+        <Header2 />
+        <Header3 sentSearch={sentSearch} />
+      </div>
     </div>
   );
 };

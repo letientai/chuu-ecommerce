@@ -9,7 +9,13 @@ export const Header1 = () => {
     <div
       className="config-top-banners"
       style={{ backgroundImage: `url(${bkHeader})` }}
-    ></div>
+    >
+      <div className="col_right d-flex justify-content-around">
+        <div className="login text">Đăng nhập</div>
+        <span>/</span>
+        <div className="register text">Đăng ký</div>
+      </div>
+    </div>
   );
 };
 

@@ -8,12 +8,26 @@
   z-index: 10;
 }
 .config-top-banners {
+  position: relative;
   cursor: pointer;
   background: #f5f5f5;
   min-height: 48px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
+  .col_right{
+    position: absolute;
+    top: 12px;
+    right: 3%;
+    color: white;
+    font-weight: 600;
+    width: 180px;
+    .text{
+      &:hover{
+        border-bottom: 2px solid white;
+      }
+    }
+  }
 }
 .c-header2 {
   font-family: Muli, Arial, Helvetica, sans-serif !important;
