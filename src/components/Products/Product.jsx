@@ -1,12 +1,21 @@
-import React from "react";
-import "./Products.scss";
+import React from 'react'
+import './Products.scss'
 import { Heart } from "react-bootstrap-icons";
-import { useNavigate } from "react-router-dom";
+import datas from '../../assets/Data/datas'
+import { useDispatch } from 'react-redux';
+import { setAddCart } from '../../redux';
+import { useNavigate } from "react-router-dom"
 const Product = ({ data }) => {
+  const dispatch = useDispatch();
+  const handeAddCart = (id) => {
+    const currentProduct = datas.find(data => data.id === id);
+    dispatch(setAddCart(currentProduct));
+  }
   const navigate = useNavigate();
   const moveToDetail = () => {
     navigate(`/san-pham/${data.id}`);
   };
+
   return (
     <div
       className="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 itemProduct"
@@ -24,8 +33,15 @@ const Product = ({ data }) => {
             ></div>
           );
         })}
+        <button
+          onClick={() => {
+            handeAddCart(data.id)
+          }}
+          className='itemProduct__btn--addCart'>
+          add cart
+        </button>
         <button className="itemProduct__btn--addCart">add cart</button>
-      </div>
+      </div >
       <div className="itemProduct__name">
         <p>
           <span>{data.name}</span>
@@ -38,7 +54,7 @@ const Product = ({ data }) => {
         </button>
       </div>
       <p>Lượt mua: {data.sort_oder}</p>
-    </div>
+    </div >
   );
 };
 
