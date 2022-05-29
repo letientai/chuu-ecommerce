@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import datas from "../../assets/Data/data";
+import datas from "../../assets/Data/datas";
 import Pagination from "./Pagination/Pagination";
 import Product from "./Product";
 const Products = ({ search }) => {

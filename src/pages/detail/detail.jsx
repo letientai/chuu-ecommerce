@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { ProductIntro } from "../../components/product-intro/productIntro";
 import "./detail.scss";
 import { useLocation } from "react-router-dom";
-import datas from "../../assets/Data/data";
+import datas from "../../assets/Data/datas";
 export const Detail = () => {
   const location = useLocation();
   const Id = location.pathname.split("san-pham/")[1];
