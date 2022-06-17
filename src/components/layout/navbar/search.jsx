@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import icsearch from "../../../assets/img-navbar/search.png";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {setCurrentPage } from "../../../redux";
 export const Search = (prop) => {
   const [data, setData] = useState("");
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const setSearch = (e) => {
     setData(e.target.value);
   };
   const handleSearch = (e) => {
     if (e.key === "Enter" && data !== "") {
       navigate("/");
+      // Mỗi lần nhấn tìm kiếm thì phải set cái trang lại đứng đầu trang
+      setTimeout(() => {
+        dispatch(setCurrentPage(1))
+      }, [1200]);
       if (data) {
         prop.sentData(data);
       } else {

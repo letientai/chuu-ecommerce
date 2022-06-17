@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './Products.scss'
 import { Heart } from "react-bootstrap-icons";
 import datas from '../../assets/Data/datas'
@@ -8,14 +8,14 @@ import { useNavigate } from "react-router-dom"
 const Product = ({ data }) => {
   const dispatch = useDispatch();
   const handeAddCart = (id) => {
+    console.log("con cac");
     const currentProduct = datas.find(data => data.id === id);
     dispatch(setAddCart(currentProduct));
   }
   const navigate = useNavigate();
-  const moveToDetail = () => {
-    navigate(`/san-pham/${data.id}`);
+  const moveToDetail = (e) => {
+      navigate(`/san-pham/${data.id}`)
   };
-
   return (
     <div
       className="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 itemProduct"
@@ -34,13 +34,13 @@ const Product = ({ data }) => {
           );
         })}
         <button
-          onClick={() => {
-            handeAddCart(data.id)
+          onClick={(e) => {
+              e.stopPropagation();
+              handeAddCart(data.id);
           }}
           className='itemProduct__btn--addCart'>
           add cart
         </button>
-        <button className="itemProduct__btn--addCart">add cart</button>
       </div >
       <div className="itemProduct__name">
         <p>

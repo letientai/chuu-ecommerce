@@ -1,19 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { setCurrentPage } from '../../../redux';
 import './Pagination.scss';
 const Pagination = ({
     cardPerPage,
     totalProducts, 
     currentPage ,
-    setCurrentPage,
-    setLoading
+    setLoading,
+    data
 }) => {
-    const pageNumbers = [];
-    for (let i = 1; i < Math.ceil(totalProducts / cardPerPage); i++) {
-        pageNumbers.push(i);
+
+    const [pageNumbers,setPageNumbers] = useState([]);
+    const dispatch = useDispatch();
+    const getTotalPages = ()=>{
+        if((totalProducts / cardPerPage) <= 1 && totalProducts > 0){
+            setPageNumbers([1]);
+        }else{
+            const totalPages = [];
+            for (let i = 1; i <= Math.ceil(totalProducts / cardPerPage); i++) {
+                totalPages.push(i);
+            }
+            setPageNumbers(totalPages)
+        }
     }
-    const handlePagination = async (page)=> {
+    useEffect(()=>{
+        getTotalPages();
+    },[data])
+    console.log(pageNumbers);
+    console.log(data.length);
+    const handlePagination =  (page)=> {
         window.scrollTo(0, 200);
-        await setCurrentPage(page);
+        dispatch(setCurrentPage(page));
         setTimeout(()=> {
             setLoading(false);
         },[1200])

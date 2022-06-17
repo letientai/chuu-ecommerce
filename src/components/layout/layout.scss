@@ -99,10 +99,16 @@
           transform-origin: calc(100% - 12px) top;
           animation: fade-pour-down linear .2s;
           min-height: 300px;
-          max-height: 50vh;
+          max-height: 70vh;
+          // max-height: 100vh;
           .option__cart__wrap{
+            display : flex;
+            flex-direction: column;
+            .option__cart__title{
+              margin: auto;
+            }
             height : 300px;
-            max-height: 60%;
+            // max-height: 60%;
             overflow-y: scroll;
             &::-webkit-scrollbar {
               width : 10px;
@@ -120,8 +126,10 @@
               .item__cart--left{
                   width: 40%;
                 .item__cart__img{
-                    width : 100%;
-                    height : 100%;
+                  padding-top: 100%;
+                  width: 100%;
+                  background-repeat: no-repeat;
+                  background-size: cover;
                 }
               }
               .item__cart--right{

@@ -8,6 +8,12 @@ import { productsInCartSelector } from "../../../redux";
 import ItemCart from "./ItemCart";
 export const Option = () => {
   const productsInCart = useSelector(productsInCartSelector);
+  const price = 
+  productsInCart && productsInCart.reduce((accumulator , currentValue)=>{
+      let priceString = currentValue.price;
+      const priceNumber = parseInt(priceString.replace(/[.USD]/g, ''));
+      return accumulator + priceNumber;
+  },0);
   return (
     <div className="options d-flex px-3">
         <div  className="header-right-dropdown-ctn option__shopping my-3 mx-2">
@@ -33,11 +39,13 @@ export const Option = () => {
                 )
               })
               :
-              <h2>Giỏ hàng trống</h2>}
+              <div className="option__cart__title" >
+                <h2>Giỏ hàng trống</h2>
+              </div>}
             </div>
             <div className="option__cart__price--total" >
               <p>
-                Tổng giá:<h4>24500000</h4>
+                Tổng giá:<h4>{price.toString().replace(/\B(?=(\d{2})+(?!\d))/g, '.')} USD</h4>
               </p>
             </div>
             <div className="option__cart__checkout" >

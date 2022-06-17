@@ -4,10 +4,12 @@ const ItemCart = ({item}) => {
   return (
     <div className="item__cart" >
       <div className="item__cart--left" >
-          <img 
+          <div
           className="item__cart__img" 
-          src={item.image}
-          ></img>
+          style={{
+            backgroundImage : 'url(' + item.image + ')'
+          }}
+          ></div>
       </div>
       <div className="item__cart--right" >
           <p className="item__cart__name" >{item.name}</p>

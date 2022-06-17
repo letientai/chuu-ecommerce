@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import datas from "../../assets/Data/datas";
+import { currentPageSelector } from "../../redux";
 import Pagination from "./Pagination/Pagination";
 import Product from "./Product";
 const Products = ({ search }) => {
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
   const [cardPerPage, setCardPerPage] = useState(12);
   const [data, setData] = useState(datas);
+  const currentPage = useSelector(currentPageSelector);
 
   const indexLastPage = currentPage * cardPerPage;
   const indexFirstPage = indexLastPage - cardPerPage;
@@ -55,8 +57,8 @@ const Products = ({ search }) => {
           cardPerPage={cardPerPage}
           totalProducts={data.length}
           currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
           setLoading={setLoading}
+          data={data}
         />
       </div>
     </div>

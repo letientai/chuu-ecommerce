@@ -33,7 +33,10 @@ export const Option = () => {
                 )
               })
               :
-              <h2>Giỏ hàng trống</h2>}
+              <div className="option__cart__title" >
+                {/* <h2 >Giỏ hàng trống</h2> */}
+              </div>
+              }
             </div>
             <div className="option__cart__price--total" >
               <p>
