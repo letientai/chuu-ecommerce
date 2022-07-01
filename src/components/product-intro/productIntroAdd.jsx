@@ -1,10 +1,21 @@
 import React from "react";
-export const ProductIntroAdd = () => {
+import { useDispatch } from "react-redux";
+import { setAddCart } from "../../redux";
+export const ProductIntroAdd = ({ data }) => {
+  const dispatch = useDispatch();
+  const handeAddCart = (id) => {
+    dispatch(setAddCart(data));
+  };
   return (
     <div className="product-intro__add">
       <div className="she-clearfix d-flex">
         <div className="product-intro__add-btn">
-          <button className="she-btn-black she-btn-xl">
+          <button
+            className="she-btn-black she-btn-xl"
+            onClick={() => {
+              handeAddCart(data.id);
+            }}
+          >
             Thêm Vào Giỏ Hàng
           </button>
         </div>
@@ -15,4 +26,3 @@ export const ProductIntroAdd = () => {
     </div>
   );
 };
-

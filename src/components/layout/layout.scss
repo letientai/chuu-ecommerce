@@ -6,6 +6,12 @@
   visibility: visible;
   transition: ease-in-out 0.4s;
   z-index: 10;
+  .formLogin{
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    left: 0;
+  }
 }
 .config-top-banners {
   position: relative;
@@ -18,13 +24,18 @@
   .col_right{
     position: absolute;
     top: 12px;
-    right: 3%;
+    right: 2%;
     color: white;
     font-weight: 600;
-    width: 180px;
     .text{
       &:hover{
         border-bottom: 2px solid white;
+      }
+    }
+    .customerName{
+      color: #fffd25;
+      &:hover{
+        border-bottom: none;
       }
     }
   }
@@ -197,7 +208,7 @@
                 display: inline-flex;
                 align-items: center;
                 margin-right: 10px;
-                h4{
+                span{
                   display: inline-block;
                   margin: 0;
                 }
