@@ -97,7 +97,7 @@ export const ProductIntro = ({ data }) => {
               </div>
             </div>
           </div>
-          <ProductIntroAdd />
+          <ProductIntroAdd data={data}/>
           <ProductIntroFreeshipping />
         </div>
       </div>

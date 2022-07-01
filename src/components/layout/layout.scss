@@ -6,14 +6,39 @@
   visibility: visible;
   transition: ease-in-out 0.4s;
   z-index: 10;
+  .formLogin{
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    left: 0;
+  }
 }
 .config-top-banners {
+  position: relative;
   cursor: pointer;
   background: #f5f5f5;
   min-height: 48px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
+  .col_right{
+    position: absolute;
+    top: 12px;
+    right: 2%;
+    color: white;
+    font-weight: 600;
+    .text{
+      &:hover{
+        border-bottom: 2px solid white;
+      }
+    }
+    .customerName{
+      color: #fffd25;
+      &:hover{
+        border-bottom: none;
+      }
+    }
+  }
 }
 .c-header2 {
   font-family: Muli, Arial, Helvetica, sans-serif !important;
@@ -183,7 +208,7 @@
                 display: inline-flex;
                 align-items: center;
                 margin-right: 10px;
-                h4{
+                span{
                   display: inline-block;
                   margin: 0;
                 }

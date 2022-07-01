@@ -37,7 +37,7 @@ export const Option = () => {
             </div>
             <div className="option__cart__price--total" >
               <p>
-                Tổng giá:<h4>24500000</h4>
+                Tổng giá:<span>24500000</span>
               </p>
             </div>
             <div className="option__cart__checkout" >

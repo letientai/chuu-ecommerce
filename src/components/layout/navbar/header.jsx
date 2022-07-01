@@ -1,15 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import "../layout.scss";
 import bkHeader from "../../../assets/img-navbar/header.gif";
 import { Option } from "./option";
 import { Search } from "./search";
 import { useNavigate } from "react-router-dom";
-export const Header1 = () => {
+export const Header1 = (prop) => {
+  const customerName = localStorage.getItem("customerName");
+  const openLogin = () => {
+    prop.openFormLogin(true);
+  };
+
+  const openRegister = () => {
+    prop.openFormRegister(true);
+  };
   return (
     <div
       className="config-top-banners"
       style={{ backgroundImage: `url(${bkHeader})` }}
-    ></div>
+    >
+      <div className="col_right d-flex justify-content-around">
+        {customerName ? (
+          <>
+            <div className="customerName text mx-2">{customerName}</div>
+            <span>/</span>
+            <div
+              className="register text mx-2"
+              onClick={() => {
+                localStorage.clear();
+              }}
+            >
+              Đăng xuất
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="login text mx-2" onClick={openLogin}>
+              Đăng nhập
+            </div>
+            <span>/</span>
+            <div className="register text mx-2" onClick={openRegister}>
+              Đăng ký
+            </div>
+          </>
+        )}
+      </div>
+    </div>
   );
 };
 
